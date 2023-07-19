@@ -1,4 +1,4 @@
-module gothub.com/dasun/first_api
+module github.com/dasun/first_api/src
 
 go 1.20
 
