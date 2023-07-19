@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"net/http"
-	//"os/user"
 	"strconv"
 
 	"github.com/dasun/first_api/src/dtos"
@@ -56,12 +55,12 @@ func UpdateById(c *gin.Context) {
 	idStr := c.Param("id")
 	id, _ := strconv.Atoi(idStr)
 
-	var updateDTO dtos.CreateDTO
+	var updateDTO dtos.UpdateDTO
 	if err := c.BindJSON(&updateDTO); err != nil {
 		return
 	}
 
-	updateUser := models.MapToUser(updateDTO)
+	updateUser := models.MapToUserFromUpdateDTO(updateDTO)
 	err := services.UpdateUserByID(id, updateUser)
 	if err != nil {
 		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "user not found"})
