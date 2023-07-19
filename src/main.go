@@ -46,10 +46,9 @@ func getById(c *gin.Context) {
 			c.IndentedJSON(http.StatusOK, users[i])
 			return
 		}
-		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "user not found"})
-		return
-	}
 
+	}
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "user not found"})
 }
 
 func createUsers(c *gin.Context) {
@@ -71,7 +70,6 @@ func deleteById(c *gin.Context) {
 			return
 		}
 		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "user not found"})
-		return
 
 	}
 
@@ -98,7 +96,6 @@ func updateById(c *gin.Context) {
 		}
 	}
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "user not found"})
-	return
 
 }
 
