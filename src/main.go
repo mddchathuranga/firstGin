@@ -23,15 +23,6 @@ var users = []user{
 	{ID: 3, Username: "Lasan", Address: "Gampaha", Mobile: "07188888888", Age: 25, Email: "lasan.e.com"},
 }
 
-/*func getUserById(id int) (*user, error) {
-	for i, u := range users {
-		if u.ID == id {
-
-		}
-	}
-	return nil, errors.New("user not found")
-}*/
-
 //user handlers
 
 func getAllUsers(c *gin.Context) {
